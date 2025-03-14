@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ลงชื่อเข้าสู่ระบบ</title>
     <style>
-        /* ตั้งค่าพื้นหลังและจัดฟอร์มให้อยู่ตรงกลาง */
+        /* ตั้งค่าพื้นหลังสีแดงและจัดฟอร์มให้อยู่ตรงกลาง */
         body {
             background-color: red;
             display: flex;
@@ -15,20 +15,28 @@
             margin: 0;
         }
 
-        /* สไตล์ของฟอร์ม */
+        /* สไตล์ของกรอบฟอร์ม */
         .form-container {
             background-color: white;
             padding: 20px;
             border-radius: 10px;
             box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
             text-align: center;
-            width: 300px;
+            width: 320px;
+        }
+
+        /* สไตล์กรอบล้อมรอบช่องกรอกข้อมูล */
+        .input-box {
+            background-color: #f9f9f9;
+            padding: 15px;
+            border-radius: 8px;
+            border: 1px solid #ddd;
+            margin-bottom: 15px;
         }
 
         input {
-            width: 90%;
+            width: 100%;
             padding: 8px;
-            margin: 10px 0;
             border: 1px solid #ccc;
             border-radius: 5px;
             text-align: center;
@@ -53,14 +61,16 @@
     <div class="form-container">
         <h2>ลงชื่อเข้าสู่ระบบ</h2>
         <br>
-        <label>ชื่อ:</label>
-        <br>
-        <input type="text" id="name" required>
-        <br>
-        <label>อีเมล:</label>
-        <br>
-        <input type="email" id="email" required>
-        <br><br>
+        <div class="input-box">
+            <label>ชื่อ:</label>
+            <br>
+            <input type="text" id="name" required>
+        </div>
+        <div class="input-box">
+            <label>อีเมล:</label>
+            <br>
+            <input type="email" id="email" required>
+        </div>
         <button type="button" onclick="sendMessage()">ส่งข้อมูล</button>
     </div>
 
