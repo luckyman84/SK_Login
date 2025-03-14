@@ -1,69 +1,46 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
-<html>
+<!DOCTYPE html>
+<html lang="th">
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-  <meta http-equiv="Content-Style-Type" content="text/css">
-  <title></title>
-  <meta name="Generator" content="Cocoa HTML Writer">
-  <meta name="CocoaVersion" content="2575.4">
-  <style type="text/css">
-    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica}
-    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica; min-height: 14.0px}
-    li.li3 {margin: 0.0px 0.0px 0.0px 0.0px; font: 16.0px 'Helvetica Neue'; -webkit-text-stroke: #000000}
-    span.s1 {font: 12.0px Helvetica; -webkit-text-stroke: 0px #000000}
-    span.s2 {font-kerning: none}
-    span.s3 {font: 16.0px 'Times New Roman'; font-kerning: none}
-    ul.ul1 {list-style-type: '—  '}
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ลงทะเบียน</title>
 </head>
 <body>
-<p class="p1">&lt;!DOCTYPE html&gt;</p>
-<p class="p1">&lt;html lang="th"&gt;</p>
-<p class="p1">&lt;head&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;meta charset="UTF-8"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;title&gt;ลงทะเบียน&lt;/title&gt;</p>
-<p class="p1">&lt;/head&gt;</p>
-<p class="p1">&lt;body&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;h2&gt;ลงทะเบียนเข้าสู่ระบบ&lt;/h2&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;form id="userForm"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;label&gt;ชื่อ:&lt;/label&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;input type="text" id="name" required&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;br&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;label&gt;อีเมล:&lt;/label&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;input type="email" id="email" required&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;br&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;button type="submit"&gt;ส่งข้อมูล&lt;/button&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;/form&gt;</p>
-<p class="p2"><br></p>
-<ul class="ul1">
-  <li class="li3"><span class="s1"><span class="Apple-converted-space">    </span>&lt;script src="</span><span class="s2">https://static.line-scdn.net/liff/edge/</span><span class="s3">2</span><span class="s2">/sdk.js</span><span class="s1">"&gt;&lt;/script&gt;</span></li>
-</ul>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;script&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>document.addEventListener("DOMContentLoaded", async function() {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>await liff.init({ liffId: "2007062166-eKRgxxW8" }); // ใส่ LIFF ID ของคุณ</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">            </span>document.getElementById("userForm").addEventListener("submit", async function(event) {</p>
-<p class="p1"><span class="Apple-converted-space">                </span>event.preventDefault();</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">                </span>let name = document.getElementById("name").value;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>let email = document.getElementById("email").value;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>let message = `ลงชื่อเข้าใช้,${name},${email}`;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">                </span>// ส่งข้อความไปยัง LineOA โดยไม่มีการตอบกลับ</p>
-<p class="p1"><span class="Apple-converted-space">                </span>if (liff.isInClient()) {</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>liff.sendMessages([{ type: "text", text: message }])</p>
-<p class="p1"><span class="Apple-converted-space">                        </span>.then(() =&gt; {</p>
-<p class="p1"><span class="Apple-converted-space">                            </span>liff.closeWindow(); // ปิดหน้าต่างโดย ไม่มีการแจ้งเตือน</p>
-<p class="p1"><span class="Apple-converted-space">                        </span>})</p>
-<p class="p1"><span class="Apple-converted-space">                        </span>.catch(err =&gt; console.error("Error sending message:", err));</p>
-<p class="p1"><span class="Apple-converted-space">                </span>} else {</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>alert("กรุณาเปิดในแอป LINE");</p>
-<p class="p1"><span class="Apple-converted-space">                </span>}</p>
-<p class="p1"><span class="Apple-converted-space">            </span>});</p>
-<p class="p1"><span class="Apple-converted-space">        </span>});</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;/script&gt;</p>
-<p class="p1">&lt;/body&gt;</p>
-<p class="p1">&lt;/html&gt;</p>
+    <h2>ลงทะเบียนเข้าสู่ระบบ</h2>
+    <form id="userForm">
+        <label>ชื่อ:</label>
+        <input type="text" id="name" required>
+        <br>
+        <label>อีเมล:</label>
+        <input type="email" id="email" required>
+        <br>
+        <button type="submit">ส่งข้อมูล</button>
+    </form>
+
+    <script src="https://static.line-scdn.net/liff/edge/2/sdk.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", async function() {
+            await liff.init({ liffId: "2007062166-eKRgxxW8" }); // ใส่ LIFF ID ของคุณ
+
+            document.getElementById("userForm").addEventListener("submit", async function(event) {
+                event.preventDefault();
+
+                let name = document.getElementById("name").value;
+                let email = document.getElementById("email").value;
+                let message = `ลงชื่อเข้าใช้,${name},${email}`;
+
+                // ส่งข้อความไปยัง Line OA โดยไม่มีการตอบกลับ
+                if (liff.isInClient()) {
+                    liff.sendMessages([{ type: "text", text: message }])
+                        .then(() => {
+                            liff.closeWindow(); // ปิดหน้าต่างโดยไม่มีการแจ้งเตือน
+                        })
+                        .catch(err => console.error("Error sending message:", err));
+                } else {
+                    alert("กรุณาเปิดในแอป LINE");
+                }
+            });
+        });
+    </script>
 </body>
 </html>
