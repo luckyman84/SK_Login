@@ -25,18 +25,11 @@
             width: 320px;
         }
 
-        /* สไตล์กรอบล้อมรอบช่องกรอกข้อมูล */
-        .input-box {
-            padding: 10px;
-            border-radius: 8px;
-            border: 1px solid #ddd;
-            margin-bottom: 15px;
-            background-color: white; /* ไม่มีสีเทา */
-        }
-
+        /* ปรับสไตล์ช่องกรอกข้อมูลให้ไม่มีกรอบซ้อนด้านหลัง */
         input {
-            width: 100%;
+            width: 90%;
             padding: 8px;
+            margin: 10px 0;
             border: 1px solid #ccc;
             border-radius: 5px;
             text-align: center;
@@ -62,16 +55,14 @@
     <div class="form-container">
         <h2>ลงชื่อเข้าสู่ระบบ</h2>
         <br>
-        <div class="input-box">
-            <label>ชื่อ:</label>
-            <br>
-            <input type="text" id="name" required>
-        </div>
-        <div class="input-box">
-            <label>อีเมล:</label>
-            <br>
-            <input type="email" id="email" required>
-        </div>
+        <label>ชื่อ:</label>
+        <br>
+        <input type="text" id="name" required>
+        <br>
+        <label>อีเมล:</label>
+        <br>
+        <input type="email" id="email" required>
+        <br><br>
         <button type="button" onclick="sendMessage()">ส่งข้อมูล</button>
     </div>
 
