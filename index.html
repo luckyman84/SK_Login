@@ -54,7 +54,7 @@
 <p class="p1"><span class="Apple-converted-space">                </span>if (liff.isInClient()) {</p>
 <p class="p1"><span class="Apple-converted-space">                    </span>liff.sendMessages([{ type: "text", text: message }])</p>
 <p class="p1"><span class="Apple-converted-space">                        </span>.then(() =&gt; {</p>
-<p class="p1"><span class="Apple-converted-space">                            </span>liff.closeWindow(); // ปิดหน้าต่างโดยไม่มีการแจ้งเตือน</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>liff.closeWindow(); // ปิดหน้าต่างโดย ไม่มีการแจ้งเตือน</p>
 <p class="p1"><span class="Apple-converted-space">                        </span>})</p>
 <p class="p1"><span class="Apple-converted-space">                        </span>.catch(err =&gt; console.error("Error sending message:", err));</p>
 <p class="p1"><span class="Apple-converted-space">                </span>} else {</p>
